@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Hello!</title>
+<script>
+function notify(){
+
+if (Notification.permission !== "granted") {
+Notification.requestPermission();
+}
+ else{
+var notification = new Notification('notification ', {
+  body: "Welcome to my App!",
+});
+notification.onclick = function () {
+  window.open("http://kongu.ac.in");
+};
+}
+}
+</script>
+</head>
+
+<body>
+<button onclick="notify()">Notify</button>
+</body>
